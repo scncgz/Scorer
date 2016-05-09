@@ -7,6 +7,7 @@ import sys
 import json
 import configparser
 import threading
+import pymongo
 from pymongo import MongoClient
 
 conf = configparser.ConfigParser()
@@ -352,4 +353,8 @@ for (_, student) in result.items():
     stu = student.zip()
     rs.append(stu)
 col_score.insert_many(rs, False)
+p("Finished!")
+
+p("Creating indexes...")
+col_score.create_index([("id", pymongo.ASCENDING)])
 p("Finished!")
