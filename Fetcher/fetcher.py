@@ -1,10 +1,12 @@
 #!/usr/bin/python3
+# -*- coding: utf-8 -*-
 import requests
 import time
 import xmltodict
 import sys
 import json
 import configparser
+import threading
 from pymongo import MongoClient
 
 conf = configparser.ConfigParser()
@@ -120,7 +122,7 @@ class Teacher:
         global questions_map, subjects_map
         if not self.logged:
             return False
-        for subject in subjects_map:
+        for subject in self.subjects:
             question_query = url + "QueryQuestion?SubjectId=" +\
                              subject + "&OperMac=" + fake_mac
             rs = get_dict(question_query)['Questions']['Row']
@@ -321,6 +323,7 @@ col_subject = db[col_subject_name]
 col_class = db[col_class_name]
 col_question = db[col_question_name]
 
+threads = {}
 for group in account:
     for (username, password) in group.items():
         t = Teacher(username, password)
@@ -328,7 +331,10 @@ for group in account:
         t.getSubjects()
         t.getClasses()
         t.getQuestions()
-        t.fetch()
+        threads[username] = threading.Thread(target=t.fetch, name=username)
+        threads[username].start()
+for (_, thread) in threads.items():
+    thread.join()
 
 p("The collection name is [" + col_name + "]")
 
