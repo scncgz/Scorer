@@ -1,0 +1,12 @@
+[remote]
+server = 127.0.0.1
+encoding = gbk
+
+[local]
+db_server = mongodb://127.0.0.1:27017
+fake_mac = 000000CC00CC
+
+[account]
+senior1 = {"xxx": "xxx", "xxx": "xxx", "xxx": "xxx", "xxx": "xxx", "xxx": "xxx", "xxx": "xxx", "xxx": "xxx", "xxx": "xxx", "xxx": "xxx"}
+senior2 = {"xxx": "xxx", "xxx": "xxx", "xxx": "xxx", "xxx": "xxx", "xxx": "xxx", "xxx": "xxx", "xxx": "xxx", "xxx": "xxx", "xxx": "xxx"}
+senior3 = {"xxx": "xxx", "xxx": "xxx", "xxx": "xxx", "xxx": "xxx", "xxx": "xxx", "xxx": "xxx", "xxx": "xxx", "xxx": "xxx", "xxx": "xxx"}
