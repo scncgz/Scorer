@@ -1,0 +1,63 @@
+@charset "utf-8";
+body {
+    color: #333;
+    background-color: #FAFAFA !important;
+    padding-bottom: 10px;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+    font-size: 16px;
+}
+a {
+    color: #337ab7;
+}
+a:hover, a:visited {
+    color: #0066FF;
+}
+small {
+    color: rgba(0, 0, 0, 0.75) !important;
+}
+.container {
+    padding: 0 40px;
+}
+.card {
+    background: #FFF;
+    border-radius: 1px;
+    margin-top: 35px;
+    padding: 3%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition-duration: 0.5s;
+    display: block;
+}
+.tight {
+    padding: 0;
+    margin: 0;
+}
+
+/*
+* The border things
+*/
+
+.top-border-red {
+    border-top: 5px solid #FF7373;
+    padding-top: 10px;
+}
+.top-border-blue {
+    border-top: 5px solid #0066FF;
+    padding-top: 10px;
+}
+.top-border-orange {
+    border-top: 5px solid #FF6600;
+    padding-top: 10px;
+}
+.left-border-red {
+    border-left: 6px solid #FF7373;
+    padding-left: 5px;
+}
+.left-border-blue {
+    border-left: 6px solid #56A5EB;
+    padding-left: 5px;
+}
+.left-border-orange {
+    border-left: 6px solid #FF6600;
+    padding-left: 5px;
+}
+
